@@ -1,0 +1,92 @@
+[workspace]
+members = [
+    "apps/server",
+    "crates/core",
+    "crates/auth",
+    "crates/rides",
+    "crates/location",
+    "crates/groups",
+    "crates/safety",
+    "crates/notifications",
+    "crates/api",
+    "crates/database",
+]
+resolver = "2"
+
+# ── Integration test harness ──────────────────────────────────────────────────
+[[workspace.metadata.test]]
+name = "location_tests"
+
+[[workspace.metadata.test]]
+name = "safety_score_tests"
+
+[[workspace.metadata.test]]
+name = "auth_tests"
+
+[[workspace.metadata.test]]
+name = "models_tests"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1.40.0", features = ["full"] }
+
+# Web framework
+axum = { version = "0.7.7", features = ["ws", "multipart"] }
+axum-extra = { version = "0.9.4", features = ["typed-header"] }
+tower = { version = "0.5.1", features = ["full"] }
+tower-http = { version = "0.6.2", features = ["cors", "fs", "trace", "compression-gzip"] }
+
+# Serialization
+serde = { version = "1.0.210", features = ["derive"] }
+serde_json = { version = "1.0.128" }
+
+# Database
+sqlx = { version = "0.8.2", features = ["runtime-tokio-rustls", "sqlite", "postgres", "uuid", "chrono", "migrate"] }
+
+# Auth / Crypto
+jsonwebtoken = { version = "9.3.0" }
+bcrypt = { version = "0.15.1" }
+uuid = { version = "1.10.0", features = ["v4", "serde"] }
+rand = { version = "0.8.5" }
+
+# HTTP client
+reqwest = { version = "0.12.8", features = ["json", "rustls-tls"] }
+
+# Date/Time
+chrono = { version = "0.4.38", features = ["serde"] }
+
+# Environment
+dotenvy = { version = "0.15.7" }
+config = { version = "0.14.0", features = ["toml"] }
+
+# Logging / Tracing
+tracing = { version = "0.1.40" }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+
+# Error handling
+thiserror = { version = "1.0.65" }
+anyhow = { version = "1.0.90" }
+
+# Validation
+validator = { version = "0.18.1", features = ["derive"] }
+
+# WebSocket
+tokio-tungstenite = { version = "0.24.0" }
+futures = { version = "0.3.31" }
+futures-util = { version = "0.3.31" }
+
+# Misc
+bytes = { version = "1.7.2" }
+once_cell = { version = "1.20.2" }
+regex = { version = "1.11.0" }
+geo = { version = "0.28.0" }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+opt-level = 0
+debug = true

@@ -1,0 +1,38 @@
+[package]
+name = "motorguard-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "motorguard-server"
+path = "src/main.rs"
+
+[dependencies]
+motorguard-core          = { path = "../../crates/core" }
+motorguard-database      = { path = "../../crates/database" }
+motorguard-auth          = { path = "../../crates/auth" }
+motorguard-rides         = { path = "../../crates/rides" }
+motorguard-location      = { path = "../../crates/location" }
+motorguard-groups        = { path = "../../crates/groups" }
+motorguard-safety        = { path = "../../crates/safety" }
+motorguard-notifications = { path = "../../crates/notifications" }
+motorguard-api           = { path = "../../crates/api" }
+
+tokio          = { workspace = true }
+axum           = { workspace = true }
+axum-extra     = { workspace = true }
+tower          = { workspace = true }
+tower-http     = { workspace = true }
+serde          = { workspace = true }
+serde_json     = { workspace = true }
+sqlx           = { workspace = true }
+uuid           = { workspace = true }
+chrono         = { workspace = true }
+dotenvy        = { workspace = true }
+tracing        = { workspace = true }
+tracing-subscriber = { workspace = true }
+thiserror      = { workspace = true }
+anyhow         = { workspace = true }
+futures-util   = { workspace = true }
+futures        = { workspace = true }
+tokio-tungstenite = { workspace = true }

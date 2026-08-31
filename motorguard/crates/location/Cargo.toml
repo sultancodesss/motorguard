@@ -1,0 +1,10 @@
+[package]
+name = "motorguard-location"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+motorguard-core = { path = "../core" }
+serde = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }

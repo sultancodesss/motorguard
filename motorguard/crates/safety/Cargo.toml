@@ -1,0 +1,14 @@
+[package]
+name = "motorguard-safety"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+motorguard-core = { path = "../core" }
+motorguard-database = { path = "../database" }
+motorguard-notifications = { path = "../notifications" }
+tokio = { workspace = true }
+serde = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }

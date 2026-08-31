@@ -1,0 +1,15 @@
+[package]
+name = "motorguard-rides"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+motorguard-core = { path = "../core" }
+motorguard-database = { path = "../database" }
+motorguard-location = { path = "../location" }
+tokio = { workspace = true }
+serde = { workspace = true }
+chrono = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0058bc" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>MotorGuard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- Foundation (no dependencies) -->
+  <script src="js/api.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/components.js"></script><!-- ← MUST be before screens -->
+
+  <!-- Screens (all depend on components, api, store, router) -->
+  <script src="js/screens/splash.js"></script>
+  <script src="js/screens/login.js"></script>
+  <script src="js/screens/otp.js"></script>
+  <script src="js/screens/home.js"></script>
+  <script src="js/screens/live-map.js"></script>
+  <script src="js/screens/ride-history.js"></script>
+  <script src="js/screens/groups.js"></script>
+  <script src="js/screens/sos.js"></script>
+  <script src="js/screens/profile.js"></script>
+
+  <!-- Boot last -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
